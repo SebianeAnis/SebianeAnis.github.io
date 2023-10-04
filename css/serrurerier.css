@@ -1946,7 +1946,7 @@
 }
 
 .--paragraph-default-4 {
-  font-family: Inconsolata, monospace;
+  font-family: sans-serif;
   color: #004979;
   margin-bottom: 0;
   /* font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Oxygen, Fira Sans, Droid Sans, sans-serif; */
@@ -4337,7 +4337,7 @@
   }
 
   .--paragraph-default-4 {
-    font-family: Inconsolata, monospace;
+    font-family: sans-serif;
     color: #004979;
     font-size: 18px;
     line-height: 28px;
