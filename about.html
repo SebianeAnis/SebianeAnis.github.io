@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accueil - Mon Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    .dark body {
+      background-color: #1a202c;
+      color: #f9fafb;
+    }
+    .dark header {
+      background-color: #2d3748;
+    }
+    .dark a {
+      color: #90cdf4;
+    }
+    .dark .card {
+      background-color: #2d3748;
+      color: #e2e8f0;
+    }
+    .dark footer {
+      background-color: #1a202c;
+      color: #a0aec0;
+    }
+    .dark button {
+      background-color: #4a5568;
+      color: #f7fafc;
+    }
+  </style>
+</head>
+
+<body class="text-gray-900 transition duration-300">
+  <header class="shadow-md fixed top-0 left-0 w-full z-10 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Mon Portfolio</h1>
+      <nav class="space-x-4">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="projet.html">Portfolio</a>
+        <a href="interactivite.html">Contact</a>
+        <button id="themeToggle" class="px-4 py-2 rounded">🌞 / 🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="mt-20 p-6">
+    <section class="text-center">
+      <h2 class="text-3xl font-bold mb-4">Qui suis-je ?</h2>
+      <div class="flex justify-center mb-6">
+        </div>
+      <p class="text-lg mb-6">
+        Dynamique et déterminé, je suis motivé à rejoindre une entreprise innovante où je pourrai développer mes compétences techniques, tout en apportant ma contribution à des projets concrets, de la conception à l'exécution.
+      </p>
+
+      <h3 class="text-2xl font-semibold mb-4">Compétences clés</h3>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-center justify-center p-4 bg-orange-100 rounded-lg shadow-lg">
+          <span class="text-lg text-orange-700">HTML5</span>    
+        </div>
+        <div class="flex items-center justify-center p-4 bg-blue-100 rounded-lg shadow-lg">
+          <span class="text-lg text-blue-800">CSS</span>      
+        </div>
+        <div class="flex items-center justify-center p-4 bg-yellow-200 rounded-lg shadow-lg">
+          <span class="text-lg text-yellow-900">JavaScript</span>
+        </div>
+        <div class="flex items-center justify-center p-4 bg-yellow-200 rounded-lg shadow-lg">
+          <span class="text-lg text-blue-600">Python</span>
+        </div>
+        <div class="flex items-center justify-center p-4 bg-blue-100 rounded-lg shadow-lg">
+          <span class="text-lg text-blue-700">TypeScript</span>
+        </div>
+        <div class="flex items-center justify-center p-4 bg-blue-200 rounded-lg shadow-lg">
+          <span class="text-lg text-blue-800">SQL</span>
+        </div>
+        <div class="flex items-center justify-center p-4 bg-blue-50 rounded-lg shadow-lg">
+          <span class="text-lg text-cyan-800">Docker</span>
+        </div>  
+      </div>
+
+      <h3 class="text-2xl font-semibold mb-4">Niveau de compétences</h3>
+      <div class="space-y-4 mb-6">
+        <div class="flex items-center justify-center p-4 bg-orange-100 rounded-lg shadow-lg">
+          <span class="text-lg text-orange-700 mr-4">HTML5</span>
+          <div class="w-full bg-gray-300 rounded-full h-2.5">
+            <div class="bg-black h-2.5 rounded-full" style="width: 60%"></div>
+          </div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center p-4 bg-blue-100 rounded-lg shadow-lg">
+          <span class="text-lg text-blue-800 mr-4">CSS</span>
+          <div class="w-full bg-blue-200 rounded-full h-2.5">
+            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center p-4 bg-yellow-100 rounded-lg shadow-lg">
+          <span class="text-lg text-yellow-900 mr-4">JavaScript</span>
+          <div class="w-full bg-yellow-200 rounded-full h-2.5">
+            <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 75%"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center p-4 bg-yellow-200 rounded-lg shadow-lg">
+          <span class="text-lg text-blue-600 mr-4">Python</span>
+          <div class="w-full bg-yellow-300 rounded-full h-2.5">
+            <div class="bg-yellow-600 h-2.5 rounded-full" style="width: 80%"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center p-4 bg-blue-100 rounded-lg shadow-lg">
+          <span class="text-lg text-blue-700 mr-4">TypeScript</span>
+          <div class="w-full bg-blue-200 rounded-full h-2.5">
+            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 70%"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center p-4 bg-blue-200 rounded-lg shadow-lg">
+          <span class="text-lg text-blue-800 mr-4">SQL</span>
+          <div class="w-full bg-blue-300 rounded-full h-2.5">
+            <div class="bg-blue-800 h-2.5 rounded-full" style="width: 90%"></div>
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center p-4 bg-blue-50 rounded-lg shadow-lg">
+          <span class="text-lg text-blue-900 mr-4">Docker</span>
+          <div class="w-full bg-blue-200 rounded-full h-2.5">
+            <div class="bg-blue-900 h-2.5 rounded-full" style="width: 80%"></div>
+          </div>
+        </div>
+        
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-2xl font-semibold mb-4">Mon Parcours</h3>
+      <ul class="space-y-4">
+        <li class="flex items-center space-x-4">
+          <span class="text-xl font-semibold">2025 - Présent</span>
+          <p class="flex-1">Formation de Concépteur Développeur d'Apllication, ETNA</p>
+        </li>
+        <li class="flex items-center space-x-4">
+          <span class="text-xl font-semibold">2023 - 2025</span>
+          <p class="flex-1">Comptable: Facturation, ADV/SAV, Fournisseur, Trésorerie, ECODROP</p>
+        </li>
+        <li class="flex items-center space-x-4">
+          <span class="text-xl font-semibold">2018 - 2022</span>
+          <p class="flex-1">Assistant de direction: Gestions des commandes, Mise en place de coordination entre plusieurs services, I PUPI</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="bg-gray-100 p-6 text-center">
+    <p>&copy; 2025 Milad Alizadeh - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
+</body>
+</html>

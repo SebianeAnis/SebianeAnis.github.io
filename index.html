@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accueil - Mon Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    .dark body {
+      background-color: #1a202c;
+      color: #f9fafb;
+    }
+
+    .dark header {
+      background-color: #2d3748;
+    }
+
+    .dark a {
+      color: #90cdf4;
+    }
+
+    .dark .card {
+      background-color: #2d3748;
+      color: #e2e8f0;
+    }
+
+    .dark footer {
+      background-color: #1a202c;
+      color: #a0aec0;
+    }
+
+    .dark button {
+      background-color: #4a5568;
+      color: #f7fafc;
+    }
+  </style>
+</head>
+<body class="text-gray-900 transition duration-300">
+
+  <header class="shadow-md fixed top-0 left-0 w-full z-10 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Mon Portfolio</h1>
+      <nav class="space-x-4">
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="projet.html">Portfolio</a>
+        <a href="interactivite.html">Contact</a>
+        <button id="themeToggle" class="px-4 py-2 rounded">🌞 / 🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-24 px-4">
+    <section class="text-center mb-12">
+      <h2 class="text-4xl font-bold animate__animated animate__fadeInDown">Bienvenue sur mon portfolio</h2>
+      <p class="mt-4 text-xl">Je suis Milad, développeur Full-Stack & étudiant passionné.</p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="card p-6 rounded shadow-md">
+        <h3 class="text-2xl font-semibold mb-2">À propos de moi</h3>
+        <p>Découvrez mon parcours, mes compétences et mes objectifs professionnels.</p>
+      </div>
+      <div class="card p-6 rounded shadow-md">
+        <h3 class="text-2xl font-semibold mb-2">Mes projets</h3>
+        <p>Python -> Quizify<br>TypeScript -> Juste Prix et le Compte est Bon<br>Docker -> Compose ton vote</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center text-sm text-gray-500 py-6 mt-12">
+    © 2025 Milad Alizadeh - Portfolio personnel
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

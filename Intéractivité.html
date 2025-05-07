@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accueil - Mon Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <style>
+    .dark body {
+      background-color: #1a202c;
+      color: #f9fafb;
+    }
+
+    .dark header {
+      background-color: #2d3748;
+    }
+
+    .dark a {
+      color: #90cdf4;
+    }
+
+    .dark .card {
+      background-color: #2d3748;
+      color: #e2e8f0;
+    }
+
+    .dark footer {
+      background-color: #1a202c;
+      color: #a0aec0;
+    }
+
+    .dark button {
+      background-color: #4a5568;
+      color: #f7fafc;
+    }
+  </style>
+</head>
+
+<body class="pt-20 text-gray-900 transition duration-300">
+
+<header class="shadow-md fixed top-0 left-0 w-full z-10 p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-xl font-bold">Mon Portfolio</h1>
+    <nav class="space-x-4">
+      <a href="index.html">Accueil</a>
+      <a href="about.html">À propos</a>
+      <a href="projet.html">Portfolio</a>
+      <button id="themeToggle" class="px-4 py-2 rounded">🌞 / 🌙</button>
+    </nav>
+  </div>
+</header>
+
+<main class="pt-24 px-4 max-w-5xl mx-auto">
+  <section id="contact" class="my-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">Contactez-moi</h2>
+    <form id="contactForm" class="space-y-4 bg-white dark:bg-gray-800 p-6 rounded shadow-md">
+      <div>
+        <label for="name" class="block font-semibold">Nom</label>
+        <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded" required>
+        <p id="nameError" class="text-red-500 text-sm hidden">Veuillez entrer votre nom.</p>
+      </div>
+      <div>
+        <label for="email" class="block font-semibold">Email</label>
+        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded" required>
+        <p id="emailError" class="text-red-500 text-sm hidden">Email invalide.</p>
+      </div>
+      <div>
+        <label for="message" class="block font-semibold">Message</label>
+        <textarea id="message" name="message" class="w-full px-4 py-2 border rounded" rows="4" required></textarea>
+        <p id="messageError" class="text-red-500 text-sm hidden">Votre message est requis.</p>
+      </div>
+      <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Envoyer</button>
+      <p id="successMessage" class="text-green-500 mt-2 hidden">Message envoyé!</p>
+    </form>
+  </section>
+
+  <section class="my-12">
+    <h2 class="text-3xl font-bold mb-6 text-center">Galerie</h2>
+    <div class="relative w-full overflow-hidden rounded-lg shadow-lg">
+      <div id="carousel" class="flex transition-transform duration-500">
+        <img src="projet-a.jpg" class="w-full object-cover h-64" alt="Quizify">
+        <img src="projet-b.jpg" class="w-full object-cover h-64" alt="Juste Prix et le Compte est Bon">
+        <img src="projet-c.jpg" class="w-full object-cover h-64" alt="Compose ton vote">
+      </div>
+      <button onclick="prevSlide()" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 px-4 py-2">←</button>
+      <button onclick="nextSlide()" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 px-4 py-2">→</button>
+    </div>
+  </section>
+</main>
+
+<script>
+  let currentSlide = 0;
+  const carousel = document.getElementById("carousel");
+  const totalSlides = carousel.children.length;
+
+  function updateCarousel() {
+    carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+  const form = document.getElementById("contactForm");
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    let isValid = true;
+
+    if (!name) {
+      document.getElementById("nameError").classList.remove("hidden");
+      isValid = false;
+    } else {
+      document.getElementById("nameError").classList.add("hidden");
+    }
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+      document.getElementById("emailError").classList.remove("hidden");
+      isValid = false;
+    } else {
+      document.getElementById("emailError").classList.add("hidden");
+    }
+
+    if (!message) {
+      document.getElementById("messageError").classList.remove("hidden");
+      isValid = false;
+    } else {
+      document.getElementById("messageError").classList.add("hidden");
+    }
+
+    if (isValid) {
+      document.getElementById("successMessage").classList.remove("hidden");
+      form.reset();
+    }
+  });
+</script>
+
+</body>
+</html>

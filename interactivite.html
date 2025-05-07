@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Accueil - Mon Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        .dark body {
+            background-color: #1a202c;
+            color: #f9fafb;
+        }
+
+        .dark header {
+            background-color: #2d3748;
+        }
+
+        .dark a {
+            color: #90cdf4;
+        }
+
+        .dark .card {
+            background-color: #2d3748;
+            color: #e2e8f0;
+        }
+
+        .dark footer {
+            background-color: #1a202c;
+            color: #a0aec0;
+        }
+
+        .dark button {
+            background-color: #4a5568;
+            color: #f7fafc;
+        }
+        #themeToggle {
+            background-color: #edf2f7;
+            color: #1a202c; 
+            border: 1px solid #cbd5e0;
+            cursor: pointer;
+            padding: 8px 16px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .dark #themeToggle {
+            background-color: #2d3748;
+            color: #f7fafc;
+        }
+        .no-arrow {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body class="pt-20 text-gray-900 transition duration-300" id="body">
+
+<header class="shadow-md fixed top-0 left-0 w-full z-10 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold">Mon Portfolio</h1>
+        <nav class="space-x-4">
+            <a href="index.html" class="no-arrow">Accueil</a>
+            <a href="about.html" class="no-arrow">À propos</a>
+            <a href="projet.html" class="no-arrow">Portfolio</a>
+            <a href="interactivite.html" class="no-arrow">Contact</a>
+            <button id="themeToggle" class="px-4 py-2 rounded">🌞 / 🌙</button>
+        </nav>
+    </div>
+</header>
+
+<main class="pt-24 px-4 max-w-5xl mx-auto">
+    <section id="contact" class="my-12">
+        <h2 class="text-3xl font-bold mb-6 text-center">Contactez-moi</h2>
+        <form id="contactForm" class="space-y-4 bg-white dark:bg-gray-800 p-6 rounded shadow-md">
+            <div>
+                <label for="name" class="block font-semibold">Nom</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded" required>
+                <p id="nameError" class="text-red-500 text-sm hidden">Veuillez entrer votre nom.</p>
+            </div>
+            <div>
+                <label for="email" class="block font-semibold">Email</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded" required>
+                <p id="emailError" class="text-red-500 text-sm hidden">Email invalide.</p>
+            </div>
+            <div>
+                <label for="message" class="block font-semibold">Message</label>
+                <textarea id="message" name="message" class="w-full px-4 py-2 border rounded" rows="4" required></textarea>
+                <p id="messageError" class="text-red-500 text-sm hidden">Votre message est requis.</p>
+            </div>
+            <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">Envoyer</button>
+            <p id="successMessage" class="text-green-500 mt-2 hidden">Message envoyé!</p>
+        </form>
+    </section>
+    <p class="text-center text-gray-500">Téléphone: +33 6 88 65 48 69</p>
+    <p class="text-center text-gray-500">LinkedIn: <a href="https://www.linkedin.com/in/milad-alizadeh-6a3904154/" target="_blank" class="text-blue-500 no-arrow">Milad Alizadeh</a></p>
+    <p class="text-center text-gray-500">Mail: <a href="mailto:milad.alizadeh9877@gmail.com" class="text-blue-500 no-arrow">milad.alizadeh9877@gmail.com</a></p>
+    <div id="carouselContainer" class="relative">
+        <div id="carousel" class="flex">
+        </div>
+        <button onclick="prevSlide()" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 px-4 py-2">←</button>
+        <button onclick="nextSlide()" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white dark:bg-gray-700 px-4 py-2">→</button>
+    </div>
+</main>
+
+<script>
+    const themeToggleButton = document.getElementById("themeToggle");
+    const bodyElement = document.getElementById("body");
+
+    themeToggleButton.addEventListener("click", () => {
+        bodyElement.classList.toggle("dark");
+        if (bodyElement.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    });
+    if (localStorage.getItem("theme") === "dark") {
+        bodyElement.classList.add("dark");
+    }
+</script>
+
+</body>
+</html>
